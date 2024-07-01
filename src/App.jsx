@@ -10,22 +10,11 @@ import AdminPage from './pages/AdminPage';
 import UserPage from './pages/UserPage';
 import HomePage from './pages/HomePage';
 import DashboardPage from './pages/DashboardPage';
-
+import PdfGenerator from "./components/PdfGenerator";
 
 function App() {
     return (
-        <AuthProvider>
-            <Router>
-                <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/login" element={<Login />} />
-                    {/* <Route path="/dashboard" element={<ProtectedRoute><DashboardPage roles={['admin']} /></ProtectedRoute>} /> */}
-                    <Route path="/dashboard" element={<DashboardPage />} />
-                    <Route path="/admin" element={<ProtectedRoute roles={['admin']}><AdminPage /></ProtectedRoute>} />
-                    <Route path="/user" element={<ProtectedRoute roles={['user', 'admin']}><UserPage /></ProtectedRoute>} />
-                </Routes>
-            </Router>
-        </AuthProvider>
+       <PdfGenerator />
     );
 }
 
